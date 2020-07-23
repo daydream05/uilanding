@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import photo from './documents/photo'
 import tag from './documents/tag'
 import mainImage from './objects/mainImage'
+import shot from './documents/shot'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,6 +18,7 @@ export default createSchema({
     /* Your types here! */
     photo,
     tag,
+    shot,
     mainImage
   ])
 })

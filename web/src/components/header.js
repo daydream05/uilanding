@@ -32,7 +32,7 @@ export const Header = () => {
               color: `inherit`,
             }}
           >
-            WebDevPhotos
+            UILanding
           </Link>
         </div>
         <div>

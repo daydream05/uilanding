@@ -36,13 +36,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'UnsplashPhoto',
-        imagePath: 'urls.regular',
-      },
-    },
-    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId,
@@ -50,6 +43,8 @@ module.exports = {
         // To enable preview of drafts, copy .env-example into .env,
         // and add a token with read permissions
         token: process.env.SANITY_TOKEN,
+        watchMode: activeEnv === 'development',
+        overlayDrafts: activeEnv === 'development',
       },
     },
     'gatsby-plugin-theme-ui',
