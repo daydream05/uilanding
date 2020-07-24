@@ -15,9 +15,12 @@ export const HeroBasic = () => {
         sx={{
           px: 4,
           [mediaQueries.lg]: {
-            px: 0,
+            px: 6,
             maxWidth: breakpoints.lg,
           },
+          [mediaQueries.xl]: {
+            px: 0,
+          }
         }}
       >
         <Container
@@ -36,7 +39,7 @@ export const HeroBasic = () => {
               mb: 2,
             }}
           >
-            Landing page of your favorite websites.
+            Find your next inspiration.
           </h1>
           <div>
             <p
@@ -44,7 +47,7 @@ export const HeroBasic = () => {
                 fontSize: 3,
               }}
             >
-              Open-sourced "dribbble shots". Free to download.
+              Landing page of your favorite websites as dribbble shots.
             </p>
           </div>
         </Container>

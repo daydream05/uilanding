@@ -42,37 +42,30 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <HeroBasic />
-      <section
-        sx={{
-          maxWidth: `1000px`,
-          margin: `0 auto`,
-        }}
-      >
-        <Gallery photos={photos} onClick={openLightbox} />
-        <ModalGateway>
-          {viewerIsOpen ? (
-            <Modal onClose={closeLightbox}>
-              <Carousel
-                currentIndex={currentImage}
-                views={photos.map((x) => ({
-                  caption: x.alt,
-                  source: {
-                    download: x.downloadUrl,
-                    regular: x.fluid.src,
-                  },
-                }))}
-                styles={{
-                  view: (base) => ({
-                    ...base,
-                    height: `80vh`,
-                    display: `flex `,
-                  }),
-                }}
-              />
-            </Modal>
-          ) : null}
-        </ModalGateway>
-      </section>
+      <Gallery photos={photos} onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map((x) => ({
+                caption: x.alt,
+                source: {
+                  download: x.downloadUrl,
+                  regular: x.fluid.src,
+                },
+              }))}
+              styles={{
+                view: (base) => ({
+                  ...base,
+                  height: `80vh`,
+                  display: `flex `,
+                }),
+              }}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </Layout>
   )
 }

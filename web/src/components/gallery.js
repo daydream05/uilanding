@@ -5,59 +5,60 @@ import { MdArrowDownward } from 'react-icons/md'
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { breakpoints } from '../gatsby-plugin-theme-ui/tokens'
+import { breakpoints, mediaQueries } from '../gatsby-plugin-theme-ui/tokens'
 
 export const Gallery = ({ photos, onClick }) => {
   return (
     <section
       sx={{
         minHeight: `50vh`,
+        px: 4,
+        [mediaQueries.lg]: {
+          px: 6,
+        }
       }}
     >
       <div
         sx={{
-          maxWidth: breakpoints.xxxl,
+          maxWidth: breakpoints.xxl,
           margin: `0 auto`,
+          py: 4,
+          [mediaQueries.lg]: {
+            py: 5,
+          }
         }}
       >
-        <ReactPhotoGallery
-          onClick={onClick}
-          photos={photos}
-          margin={8}
-          targetRowHeight={600}
-          renderImage={({ index, left, top, key, photo, margin, onClick }) => {
-            return (
-              <Photo
-                key={key}
-                index={index}
-                photo={photo}
-                left={left}
-                top={top}
-                margin={margin}
-                onClick={onClick}
-              />
-            )
+        <div
+          sx={{
+            display: `grid`,
+            gridGap: 3,
+            [mediaQueries.lg]: {
+              gridTemplateColumns: `1fr 1fr 1fr`,
+            }
           }}
-        />
+        >
+          {photos &&
+            photos.map((photo, id) => {
+              return <Photo key={id} photo={photo} onClick={onClick} />
+            })}
+        </div>
       </div>
     </section>
   )
 }
 
-const Photo = ({ photo, margin, index, top, left, onClick }) => {
+const Photo = ({ photo, onClick }) => {
 
   const handleClick = (event) => {
-    onClick(event, { photo, index })
+    onClick(event, { photo })
   }
 
   return (
     <figure
       sx={{
         cursor: `pointer`,
-        margin: `${margin}px`,
-        height: photo.height || `1500px`,
-        width: photo.width || `1500px`,
         position: `relative`,
+        margin: 0,
         ':hover, :focus, :focus-within': {
           '.tag': {
             opacity: 1,

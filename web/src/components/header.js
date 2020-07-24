@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FaInstagram, FaTwitter } from 'react-icons/fa'
 
 /** @jsx jsx */
 import { Container, jsx } from "theme-ui"
 
-import { constants } from '../gatsby-plugin-theme-ui/tokens'
+import { constants, mediaQueries } from '../gatsby-plugin-theme-ui/tokens'
 
 export const Header = () => {
   return (
@@ -20,6 +21,9 @@ export const Header = () => {
           px: 4,
           display: `flex`,
           justifyContent: `space-between`,
+          [mediaQueries.lg]: {
+            px: 5
+          }
         }}
       >
         <div>
@@ -36,31 +40,32 @@ export const Header = () => {
           </Link>
         </div>
         <div>
-          <Link
-            to="/"
+          <a
+            href="https://instagram.com/ui_landing"
             sx={{
+              ml: 3,
               textDecoration: `none`,
-              fontSize: 2,
+              fontSize: 3,
               fontWeight: `bold`,
               color: `inherit`,
             }}
           >
-            About
-          </Link>
-          <Link
-            to="/"
+            <FaTwitter />
+          </a>
+          <a
+            href="https://instagram.com/ui_landing"
             sx={{
-              ml: 4,
+              ml: 3,
               textDecoration: `none`,
-              fontSize: 2,
+              fontSize: 3,
               fontWeight: `bold`,
               color: `inherit`,
             }}
           >
-            Suggest a photo
-          </Link>
+            <FaInstagram />
+          </a>
         </div>
       </Container>
     </header>
-  );
+  )
 }

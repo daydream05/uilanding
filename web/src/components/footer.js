@@ -64,6 +64,8 @@ export const Footer = (props) => {
           {` `}
           <a
             href="https://www.gatsbyjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               color: `inherit`,
             }}
@@ -73,6 +75,8 @@ export const Footer = (props) => {
           ,{` & `}
           <a
             href="https://www.sanity.io"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               color: `inherit`,
             }}
@@ -80,6 +84,19 @@ export const Footer = (props) => {
             Sanity
           </a>
           .
+        </div>
+        <div
+          sx={{
+            position: `absolute`,
+            bottom: 0,
+            right: 5,
+          }}
+        >
+          A big thank you to Omar Bourhaouta for his{' '}
+          <a href="https://shooot.bourhaouta.com/" target="_blank" rel="noopener noreferrer">
+            shooot
+          </a>{' '}
+          project which generated these shots.
         </div>
       </Container>
     </footer>
