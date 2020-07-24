@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import ReactPhotoGallery from 'react-photo-gallery'
 import { MdArrowDownward } from 'react-icons/md'
 
@@ -23,6 +24,7 @@ export const Gallery = ({ photos, onClick }) => {
           onClick={onClick}
           photos={photos}
           margin={8}
+          targetRowHeight={600}
           renderImage={({ index, left, top, key, photo, margin, onClick }) => {
             return (
               <Photo
@@ -48,15 +50,13 @@ const Photo = ({ photo, margin, index, top, left, onClick }) => {
     onClick(event, { photo, index })
   }
 
-  const fullName = photo.user.first_name + ` ${photo.user.last_name}`
-
   return (
     <figure
       sx={{
         cursor: `pointer`,
         margin: `${margin}px`,
-        height: photo.height,
-        width: photo.width,
+        height: photo.height || `1500px`,
+        width: photo.width || `1500px`,
         position: `relative`,
         ':hover, :focus, :focus-within': {
           '.tag': {
@@ -100,35 +100,19 @@ const Photo = ({ photo, margin, index, top, left, onClick }) => {
           },
         }}
       >
-        <img src={photo.urls.regular} alt={photo.alt} onClick={handleClick} sx={{
-          display: `block`,
-          width: `100%`,
-          height: `100%`,
-        }} />
+        {photo?.fluid && (
+          <Img
+            fluid={photo.fluid}
+            alt={photo.alt}
+            onClick={handleClick}
+            sx={{
+              display: `block`,
+              width: `100%`,
+              height: `100%`,
+            }}
+          />
+        )}
       </button>
-      <div
-        className="tag"
-        sx={{
-          position: `absolute`,
-          top: 3,
-          right: 3,
-          opacity: 0,
-          visibility: `hidden`,
-          transition: `opacity .2s ease-in-out`,
-        }}
-      >
-        <span
-          sx={{
-            bg: `lightGray`,
-            px: 2,
-            fontWeight: `500`,
-            fontSize: 0,
-            borderRadius: 8,
-          }}
-        >
-          {photo.collectionTitle}
-        </span>
-      </div>
       <div
         className="download"
         sx={{
@@ -155,20 +139,14 @@ const Photo = ({ photo, margin, index, top, left, onClick }) => {
           }}
         >
           <div sx={{ flex: 1, display: `flex` }}>
-            <img
-              sx={{ borderRadius: `100%`, mr: 2 }}
-              src={photo.user.profile_image.small}
-              alt={fullName}
-            />
             <span
               sx={{
                 color: `white`,
               }}
             >
-              {fullName}
+              {photo.title}
             </span>
           </div>
-
           <a
             sx={{
               width: `32px`,

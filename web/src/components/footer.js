@@ -43,7 +43,7 @@ export const Footer = (props) => {
               },
             }}
           >
-            WebDevPhotos
+            UILanding
           </span>
         </div>
         <div

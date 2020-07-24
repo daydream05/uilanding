@@ -36,7 +36,7 @@ export const HeroBasic = () => {
               mb: 2,
             }}
           >
-            Stock photos for your blog posts
+            Landing page of your favorite websites.
           </h1>
           <div>
             <p
@@ -44,7 +44,7 @@ export const HeroBasic = () => {
                 fontSize: 3,
               }}
             >
-              Open-sourced stock photos that speak your language.
+              Open-sourced "dribbble shots". Free to download.
             </p>
           </div>
         </Container>
