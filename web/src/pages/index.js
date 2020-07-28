@@ -9,6 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { HeroBasic } from "../components/hero-basic"
 import { Gallery } from "../components/gallery";
+import { colors } from '../gatsby-plugin-theme-ui/tokens'
 
 const IndexPage = ({ data }) => {
   const { allSanityShot } = data
@@ -45,7 +46,9 @@ const IndexPage = ({ data }) => {
       <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
+          <Modal
+            onClose={closeLightbox}
+          >
             <Carousel
               currentIndex={currentImage}
               views={photos.map((x) => ({
@@ -53,6 +56,7 @@ const IndexPage = ({ data }) => {
                 source: {
                   download: x.downloadUrl,
                   regular: x.fluid.src,
+                  fullscreen: x.src,
                 },
               }))}
               styles={{
