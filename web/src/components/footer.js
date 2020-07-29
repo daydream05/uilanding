@@ -92,7 +92,15 @@ export const Footer = (props) => {
             right: 5,
           }}
         >
-          A big thank you to Omar Bourhaouta for his{' '}
+          A big thank you to{' '}
+          <a
+            href="https://twitter.com/bourhaouta?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @bourhaouta
+          </a>{' '}
+          for his{' '}
           <a href="https://shooot.bourhaouta.com/" target="_blank" rel="noopener noreferrer">
             shooot
           </a>{' '}
