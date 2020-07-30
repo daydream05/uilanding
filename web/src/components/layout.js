@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
@@ -15,19 +14,8 @@ import { jsx } from "theme-ui"
 import { Header } from "./header"
 import { Footer } from "./footer"
 
-import { mediaQueries, constants } from '../gatsby-plugin-theme-ui/tokens'
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <div
       sx={{
@@ -36,7 +24,7 @@ const Layout = ({ children }) => {
         flexDirection: `column`,
       }}
     >
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <main
         sx={{
           flex: 1,
