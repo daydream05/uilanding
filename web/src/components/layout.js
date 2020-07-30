@@ -15,6 +15,8 @@ import { jsx } from "theme-ui"
 import { Header } from "./header"
 import { Footer } from "./footer"
 
+import { mediaQueries, constants } from '../gatsby-plugin-theme-ui/tokens'
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -31,7 +33,7 @@ const Layout = ({ children }) => {
       sx={{
         minHeight: `100vh`,
         display: `flex`,
-        flexDirection: `column`
+        flexDirection: `column`,
       }}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -39,8 +41,10 @@ const Layout = ({ children }) => {
         sx={{
           flex: 1,
         }}
-      >{children}</main>
-      <Footer /> 
+      >
+        {children}
+      </main>
+      <Footer />
     </div>
   )
 }
