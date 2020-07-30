@@ -8,29 +8,26 @@ export const Footer = (props) => {
   return (
     <footer
       sx={{
-        my: 6,
+        py: 6,
         minHeight: constants.footerHeight,
         bg: `white`,
         position: `relative`,
         overflow: `hidden`,
+        px: 4,
       }}
       className={props.className}
     >
       <Container
         sx={{
           display: `flex`,
-          justifyContent: `center`,
-          alignItems: `center`,
+          flexDirection: `column`,
           height: `100%`,
+          [mediaQueries.lg]: {
+            alignItems: `flex-end`,
+          },
         }}
       >
-        <div
-          sx={{
-            position: `absolute`,
-            right: 5,
-            top: 5,
-          }}
-        >
+        <div>
           <span
             sx={{
               display: `block`,
@@ -50,9 +47,9 @@ export const Footer = (props) => {
           sx={{
             color: `black`,
             zIndex: 1,
-            position: `absolute`,
             bottom: 5,
             fontWeight: `bold`,
+            mb: 3,
             [mediaQueries.lg]: {
               fontSize: `128px`,
               fontSize: 5,
@@ -87,9 +84,7 @@ export const Footer = (props) => {
         </div>
         <div
           sx={{
-            position: `absolute`,
-            bottom: 0,
-            right: 5,
+            lineHeight: 1.2,
           }}
         >
           A big thank you to{' '}

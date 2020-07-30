@@ -168,6 +168,8 @@ const Photo = ({ photo, onClick }) => {
             title="Download photo"
             href={photo.downloadUrl}
             download
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <MdArrowDownward />
           </a>
