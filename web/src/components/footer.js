@@ -2,14 +2,14 @@ import React from 'react'
 
 /** @jsx jsx */
 import { Container, jsx } from "theme-ui"
-import { mediaQueries } from '../gatsby-plugin-theme-ui/tokens'
+import { mediaQueries, constants } from '../gatsby-plugin-theme-ui/tokens'
 
 export const Footer = (props) => {
   return (
     <footer
       sx={{
         my: 6,
-        minHeight: `300px`,
+        minHeight: constants.footerHeight,
         bg: `white`,
         position: `relative`,
         overflow: `hidden`,

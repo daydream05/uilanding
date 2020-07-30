@@ -22,8 +22,8 @@ export const Header = () => {
           display: `flex`,
           justifyContent: `space-between`,
           [mediaQueries.lg]: {
-            px: 5
-          }
+            px: 5,
+          },
         }}
       >
         <div>
@@ -41,7 +41,9 @@ export const Header = () => {
         </div>
         <div>
           <a
-            href="https://instagram.com/ui_landing"
+            href="https://twitter.com/ui_landing"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               ml: 3,
               textDecoration: `none`,
@@ -54,6 +56,8 @@ export const Header = () => {
           </a>
           <a
             href="https://instagram.com/ui_landing"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               ml: 3,
               textDecoration: `none`,

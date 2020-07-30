@@ -28,7 +28,7 @@ export { mediaQueries };
 
 export const constants = {
   headerHeight: "64px",
-  footerHeight: "450px",
+  footerHeight: "300px",
 };
 
 export const colors = {

@@ -1,11 +1,12 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import ReactPhotoGallery from 'react-photo-gallery'
 import { MdArrowDownward } from 'react-icons/md'
+import { Link } from 'gatsby'
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { breakpoints, mediaQueries } from '../gatsby-plugin-theme-ui/tokens'
+
 
 export const Gallery = ({ photos, onClick }) => {
   return (
@@ -79,8 +80,8 @@ const Photo = ({ photo, onClick }) => {
         },
       }}
     >
-      <button
-        onClick={handleClick}
+      <Link
+        to={photo.pageUrl}
         className="button"
         sx={{
           padding: 0,
@@ -113,7 +114,7 @@ const Photo = ({ photo, onClick }) => {
             }}
           />
         )}
-      </button>
+      </Link>
       <div
         className="download"
         sx={{
