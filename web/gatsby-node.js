@@ -29,6 +29,7 @@ exports.createResolvers = ({ createResolvers }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  
 
   const loadShots = async () => {
     const result = await graphql(
@@ -39,6 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
               node {
                 path
                 id
+                title
               }
             }
           }
@@ -50,12 +52,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
     console.log(shots)
 
-    shots.forEach(({ node }) => {
+    shots.forEach(({ node }, index) => {
+      const previous = index === shots.length - 1 ? null : shots[index + 1].node
+      const next = index === 0 ? null : shots[index - 1].node
+
       createPage({
         path: node.path,
         component: path.resolve(`./src/templates/shot-template.js`),
         context: {
-          id: node.id
+          id: node.id,
+          previous,
+          next
         }
       })
     })
