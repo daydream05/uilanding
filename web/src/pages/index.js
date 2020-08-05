@@ -10,7 +10,7 @@ import { HeroBasic } from "../components/hero-basic"
 import { Gallery } from "../components/gallery";
 
 const IndexPage = ({ data }) => {
-  const { allSanityShot } = data
+  const { allSanityShot, site } = data
 
   const photos = allSanityShot?.edges?.map(({ node }) => {
     return {
@@ -27,7 +27,9 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO 
+        title="Home"
+      />
       <HeroBasic />
       <Gallery photos={photos} />
     </Layout>
