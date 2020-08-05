@@ -12,6 +12,7 @@ module.exports = {
     description: `Landing page of your favorite websites as dribble shots.`,
     author: `@vince_parulan`,
     defaultImage: `/images/ui-landing-og.jpg`,
+    siteUrl: `https://uilanding.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
