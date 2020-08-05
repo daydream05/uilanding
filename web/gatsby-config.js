@@ -11,7 +11,7 @@ module.exports = {
     title: `UI Landing`,
     description: `Landing page of your favorite websites as dribble shots.`,
     author: `@vince_parulan`,
-    defaultImage: `/images/ui-lannding-og.jpg`,
+    defaultImage: `/images/ui-landing-og.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
