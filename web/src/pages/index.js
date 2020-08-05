@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { HeroBasic } from "../components/hero-basic"
 import { Gallery } from "../components/gallery";
+import { Helmet } from 'react-helmet'
 
 const IndexPage = ({ data }) => {
   const { allSanityShot, site } = data
@@ -27,9 +28,12 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Home"
       />
+      <Helmet>
+        <meta property="og:title">UI Landing</meta>
+      </Helmet>
       <HeroBasic />
       <Gallery photos={photos} />
     </Layout>
