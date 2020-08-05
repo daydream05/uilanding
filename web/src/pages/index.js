@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
         title="Home"
       />
       <Helmet>
-        <meta property="og:title">UI Landing</meta>
+        <meta property="og:title" content="UI Landing"/>
       </Helmet>
       <HeroBasic />
       <Gallery photos={photos} />
